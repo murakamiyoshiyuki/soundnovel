@@ -87,8 +87,6 @@ class AudioManager {
                 }
             }).catch(error => {
                 console.error('Failed to play BGM:', error);
-                // 自動再生がブロックされた場合の処理
-                this.handleAutoplayBlock();
             });
         } catch (error) {
             console.error('Error playing BGM:', error);
@@ -262,35 +260,6 @@ class AudioManager {
         });
     }
     
-    handleAutoplayBlock() {
-        // 自動再生がブロックされた場合の処理
-        const playButton = document.createElement('button');
-        playButton.textContent = '音声を有効にする';
-        playButton.style.cssText = `
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px 40px;
-            font-size: 18px;
-            background: #ffd700;
-            color: #000;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 10000;
-        `;
-        
-        playButton.addEventListener('click', () => {
-            this.audioContext.resume();
-            if (this.bgmAudio) {
-                this.bgmAudio.play();
-            }
-            document.body.removeChild(playButton);
-        });
-        
-        document.body.appendChild(playButton);
-    }
     
     // 特殊エフェクト音
     playSystemSound(type) {

@@ -1,0 +1,705 @@
+{
+  "chapter": 2,
+  "title": "第2章：国生みの使命",
+  "scenes": [
+    {
+      "id": "scene2-1",
+      "background": "minakanushi_shrine",
+      "bgm": "daily_life",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "僕たちが呼び出されるよりも少し前。"
+        },
+        {
+          "type": "narration",
+          "text": "ミナカヌシ様の社でこんな会話が交わされたらしかった。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "っていうか\"すごく偉いけどあんまり登場シーンがない\"って、",
+          "character": {
+            "name": "minakanushi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "扱いひどくないかな？私一応最初の神様なのに…。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "タカミムスビ",
+          "text": "どうしたんですか？ミナカヌシ。",
+          "character": {
+            "name": "takamimusubi",
+            "expression": "normal",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "あ、タカミムスビ。いやね、私、一応最初に生まれた神様じゃん。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "名前だって正式名称は「天御中主神（アメノミナカヌシノカミ）」、",
+          "character": {
+            "name": "minakanushi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "「天の中心のリーダー」って意味だよ？",
+          "character": {
+            "name": "minakanushi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "それなのに扱いに適当さを感じるっていうかさ。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "タカミムスビ",
+          "text": "それは仕方がないんじゃないですか。事実ですし。",
+          "character": {
+            "name": "takamimusubi",
+            "expression": "serious",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "酷い！",
+          "character": {
+            "name": "minakanushi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "カムムスビ",
+          "text": "まあまあ、ミナカヌシ様。",
+          "character": {
+            "name": "kamumusubi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "カムムスビ",
+          "text": "それより、中つ国のことなんですけど…",
+          "character": {
+            "name": "kamumusubi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "ああ、そうだった。中つ国ね。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "serious",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "あそこ、いつまでもドロドロしたままじゃダメよね。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "serious",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "タカミムスビ",
+          "text": "誰かに整備させる必要がありますね。",
+          "character": {
+            "name": "takamimusubi",
+            "expression": "serious",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "カムムスビ",
+          "text": "イザナギとイザナミはどうでしょう？",
+          "character": {
+            "name": "kamumusubi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "カムムスビ",
+          "text": "あの子たち、末っ子だけど仲良しだし、きっとうまくやってくれるわ。",
+          "character": {
+            "name": "kamumusubi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "いいわね！それじゃ、早速呼んでみましょう。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "smile",
+            "position": "center"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scene2-2",
+      "background": "minakanushi_shrine",
+      "bgm": "daily_life",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "そして、僕たちは呼び出された。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "失礼しますっ。",
+          "character": {
+            "name": "izanami",
+            "expression": "normal",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "ミナカヌシ様。お呼びですか？",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "イザナギ、イザナミ、よく来たね！ほら、いらっしゃい。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "smile",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "ミナカヌシ様～！",
+          "character": {
+            "name": "izanami",
+            "expression": "happy",
+            "position": "right"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "hug" }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "あら、イザナミちゃん相変わらず可愛いわね。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "smile",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "それで、今日は何の用でしょうか？",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "単刀直入に言うと、2人に中つ国に行ってもらいたいって話。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "serious",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "……え？",
+          "character": {
+            "name": "izanagi",
+            "expression": "surprised",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "中つ国…に…？",
+          "character": {
+            "name": "izanami",
+            "expression": "surprised",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "タカミムスビ",
+          "text": "あそこをちゃんとした国にしてほしいんです。",
+          "character": {
+            "name": "takamimusubi",
+            "expression": "serious",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "カムムスビ",
+          "text": "今のままじゃただの混沌だもの。",
+          "character": {
+            "name": "kamumusubi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "カムムスビ",
+          "text": "あなたたちなら、きっと素敵な国を作れるわ。",
+          "character": {
+            "name": "kamumusubi",
+            "expression": "smile",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "これを使って。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "item_get" }
+        },
+        {
+          "type": "narration",
+          "text": "ミナカヌシ様から天沼矛（あめのぬぼこ）を受け取った。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "これで中つ国をかき混ぜて、固めるの。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "choice",
+          "text": "使命への決断",
+          "options": [
+            {
+              "text": "イザナミと一緒なら、どこへでも",
+              "next": "scene2-3a",
+              "effects": {
+                "affection": 20
+              }
+            },
+            {
+              "text": "やります。やらせてください！",
+              "next": "scene2-3b",
+              "effects": {
+                "affection": 10,
+                "flag": "mission_focused"
+              }
+            },
+            {
+              "text": "ちょっと考えさせてください",
+              "next": "scene2-3c",
+              "effects": {
+                "affection": -10,
+                "flag": "hesitant"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene2-3a",
+      "background": "minakanushi_shrine",
+      "bgm": "daily_life",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミと一緒なら、どこへでも行きます。",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん…",
+          "character": {
+            "name": "izanami",
+            "expression": "happy",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "あら、素敵ね。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "smile",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "カムムスビ",
+          "text": "きゃー！若いっていいわねぇ～",
+          "character": {
+            "name": "kamumusubi",
+            "expression": "smile",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "タカミムスビ",
+          "text": "…まあ、動機はどうあれ、引き受けてくれるなら。",
+          "character": {
+            "name": "takamimusubi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "はい。イザナミがさっき言ってたんです。",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "中つ国が素敵な世界になったら一緒に行こうって。",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "だから、僕たちで素敵な世界を作ります。",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん…！",
+          "character": {
+            "name": "izanami",
+            "expression": "happy",
+            "position": "right"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "heartbeat" }
+        },
+        {
+          "type": "narration",
+          "text": "イザナミの手、温かい…"
+        },
+        {
+          "type": "scene_change",
+          "next": "scene2-4"
+        }
+      ]
+    },
+    {
+      "id": "scene2-3b",
+      "background": "minakanushi_shrine",
+      "bgm": "daily_life",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "やります。やらせてください！",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "高天原の末っ子として、この使命、必ず果たしてみせます！",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん、かっこいい…",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "頼もしいわね。じゃあ、よろしくお願い。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "smile",
+            "position": "center"
+          }
+        },
+        {
+          "type": "scene_change",
+          "next": "scene2-4"
+        }
+      ]
+    },
+    {
+      "id": "scene2-3c",
+      "background": "minakanushi_shrine",
+      "bgm": "daily_life",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "ちょっと考えさせてください…",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん？",
+          "character": {
+            "name": "izanami",
+            "expression": "question",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "いや、でも…重要な使命だし…",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ミナカヌシ",
+          "text": "あなたたちしかいないのよ。",
+          "character": {
+            "name": "minakanushi",
+            "expression": "serious",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん、私と一緒じゃ…嫌？",
+          "character": {
+            "name": "izanami",
+            "expression": "sad",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "そ、そんなことない！分かった、やります！",
+          "character": {
+            "name": "izanagi",
+            "expression": "embarrassed",
+            "position": "left"
+          }
+        },
+        {
+          "type": "scene_change",
+          "next": "scene2-4"
+        }
+      ]
+    },
+    {
+      "id": "scene2-4",
+      "background": "heaven_bridge",
+      "bgm": "mystical",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "天浮橋（あめのうきはし）に立った。"
+        },
+        {
+          "type": "narration",
+          "text": "眼下には混沌とした中つ国が広がっている。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "さあ、始めようか。",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "うん！",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "二人で天沼矛を持ち、中つ国の海をかき混ぜる。"
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "water_stir" }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ・イザナミ",
+          "text": "こおろ、こおろ、こおろ…",
+          "character": null
+        },
+        {
+          "type": "narration",
+          "text": "矛を引き上げると、その先から滴った潮が固まって島となった。"
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "flash", "color": "#ffffff", "duration": 500 }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "わあ！島ができた！",
+          "character": {
+            "name": "izanami",
+            "expression": "happy",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "これがオノゴロ島か…",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "ねえ、降りてみましょう！",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "scene_change",
+          "next": "chapter3"
+        }
+      ]
+    }
+  ]
+}

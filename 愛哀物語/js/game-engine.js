@@ -168,6 +168,12 @@ class GameEngine {
             case 'Control':
                 this.toggleSkipMode();
                 break;
+            case 'd':
+                if (e.ctrlKey && e.shiftKey) {
+                    e.preventDefault();
+                    this.toggleDebugMode();
+                }
+                break;
         }
     }
     
@@ -608,5 +614,135 @@ class GameEngine {
             return 'bad_end1';
         }
         return 'normal_end';
+    }
+    
+    toggleDebugMode() {
+        if (!this.debugPanel) {
+            this.createDebugPanel();
+        }
+        
+        if (this.debugPanel.style.display === 'none') {
+            this.debugPanel.style.display = 'block';
+            this.updateDebugInfo();
+        } else {
+            this.debugPanel.style.display = 'none';
+        }
+    }
+    
+    createDebugPanel() {
+        this.debugPanel = document.createElement('div');
+        this.debugPanel.id = 'debug-panel';
+        this.debugPanel.style.cssText = `
+            position: fixed;
+            top: 50px;
+            right: 10px;
+            width: 300px;
+            max-height: 80vh;
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 10000;
+            overflow-y: auto;
+            display: none;
+        `;
+        
+        this.debugPanel.innerHTML = `
+            <h3 style="margin-top: 0; color: #00ff00;">DEBUG MODE</h3>
+            <hr style="border-color: #00ff00;">
+            <div id="debug-info"></div>
+            <hr style="border-color: #00ff00;">
+            <h4>Controls:</h4>
+            <button onclick="game.modifyAffection(10)">愛情度+10</button>
+            <button onclick="game.modifyAffection(-10)">愛情度-10</button>
+            <br><br>
+            <button onclick="game.jumpToChapter(0)">序章へ</button>
+            <button onclick="game.jumpToChapter(1)">第1章へ</button>
+            <button onclick="game.jumpToChapter(2)">第2章へ</button>
+            <button onclick="game.jumpToChapter(3)">第3章へ</button>
+            <button onclick="game.jumpToChapter(4)">第4章へ</button>
+            <button onclick="game.jumpToChapter(5)">第5章へ</button>
+            <br><br>
+            <button onclick="game.testEnding('true_end')">TRUE END</button>
+            <button onclick="game.testEnding('normal_end')">NORMAL END</button>
+            <button onclick="game.testEnding('false_happy_end')">FALSE HAPPY</button>
+            <button onclick="game.testEnding('bad_end1')">BAD END 1</button>
+            <button onclick="game.testEnding('bad_end2')">BAD END 2</button>
+            <button onclick="game.testEnding('secret_end')">SECRET END</button>
+        `;
+        
+        document.body.appendChild(this.debugPanel);
+        
+        // グローバル変数として自身を登録（デバッグ用）
+        window.game = this;
+    }
+    
+    updateDebugInfo() {
+        if (!this.debugPanel) return;
+        
+        const infoDiv = document.getElementById('debug-info');
+        if (!infoDiv) return;
+        
+        const flags = Object.entries(this.gameState.flags)
+            .filter(([key, value]) => value)
+            .map(([key]) => key)
+            .join(', ') || 'なし';
+        
+        infoDiv.innerHTML = `
+            <strong>現在の状態:</strong><br>
+            章: ${this.currentChapter}<br>
+            シーン: ${this.currentScene}<br>
+            行: ${this.currentLine}<br>
+            <br>
+            <strong>ゲーム変数:</strong><br>
+            愛情度: ${this.gameState.affection}<br>
+            信頼度: ${this.gameState.trust}<br>
+            ルート: ${this.gameState.route}<br>
+            <br>
+            <strong>フラグ:</strong><br>
+            ${flags}<br>
+            <br>
+            <strong>選択履歴:</strong><br>
+            ${this.gameState.choices.length}個の選択<br>
+        `;
+    }
+    
+    modifyAffection(amount) {
+        this.gameState.affection += amount;
+        this.gameState.affection = Math.max(0, Math.min(100, this.gameState.affection));
+        this.updateDebugInfo();
+        console.log('愛情度:', this.gameState.affection);
+    }
+    
+    jumpToChapter(chapterNum) {
+        this.currentChapter = chapterNum;
+        this.currentScene = 0;
+        this.currentLine = 0;
+        const chapterNames = ['prologue', 'chapter1', 'chapter2', 'chapter3', 'chapter4', 'chapter5'];
+        this.scenarioLoader.loadChapter(chapterNames[chapterNum])
+            .then(() => {
+                this.playScene();
+                this.updateDebugInfo();
+            });
+    }
+    
+    testEnding(endingId) {
+        this.currentChapter = 6;
+        this.currentScene = 0;
+        this.currentLine = 0;
+        this.scenarioLoader.loadChapter('endings')
+            .then(() => {
+                // エンディングシーンを探す
+                for (let i = 0; i < this.scenarios[6].scenes.length; i++) {
+                    if (this.scenarios[6].scenes[i].id === endingId) {
+                        this.currentScene = i;
+                        break;
+                    }
+                }
+                this.playScene();
+                this.updateDebugInfo();
+            });
     }
 }

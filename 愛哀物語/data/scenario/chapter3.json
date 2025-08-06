@@ -1,0 +1,722 @@
+{
+  "chapter": 3,
+  "title": "第3章：結婚と島産み",
+  "scenes": [
+    {
+      "id": "scene3-1",
+      "background": "onogoro_island",
+      "bgm": "mystical",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "オノゴロ島に降り立った。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "これでよしっと。でもさ…イザナミ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "なあに？",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "1つだけ、良い？",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "もちろん。",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "あのさ………。「国」って、なに？",
+          "character": {
+            "name": "izanagi",
+            "expression": "question",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "え。知らないの？",
+          "character": {
+            "name": "izanami",
+            "expression": "surprised",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "うん。イザナミ、知ってるの？！",
+          "character": {
+            "name": "izanagi",
+            "expression": "surprised",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "え…っと、う～ん…なんだろうね？",
+          "character": {
+            "name": "izanami",
+            "expression": "question",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "知らないんじゃん！",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "だって、ミナカヌシ様も詳しく教えてくれなかったもん。",
+          "character": {
+            "name": "izanami",
+            "expression": "pout",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "まあ、とりあえず…島をもっと作ればいいのかな？",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "そうね。でも、その前に…",
+          "character": {
+            "name": "izanami",
+            "expression": "normal",
+            "position": "right"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scene3-2",
+      "background": "onogoro_island",
+      "bgm": "daily_life",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "あのさ、僕の身体、イザナミの身体と違うと思うんだよね…。",
+          "character": {
+            "name": "izanagi",
+            "expression": "embarrassed",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "そうなの？",
+          "character": {
+            "name": "izanami",
+            "expression": "question",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "うん。生まれた時にさ、なんかつくられ過ぎちゃったのかな？",
+          "character": {
+            "name": "izanagi",
+            "expression": "embarrassed",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "つくられ過ぎた？どういうこと？",
+          "character": {
+            "name": "izanami",
+            "expression": "question",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "えっと、つまり簡単に言うと、余計なものがくっついてるんだ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "embarrassed",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "あー、そう。",
+          "character": {
+            "name": "izanami",
+            "expression": "normal",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミは？どうなの？",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "あたし？あたしはお兄ちゃんと逆で、造られきらなくて、足りないところがあるかなー…。",
+          "character": {
+            "name": "izanami",
+            "expression": "embarrassed",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "そうなんだ…",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "じゃあさ、僕の余ってるところとイザナミの足りないところを合わせたら…",
+          "character": {
+            "name": "izanagi",
+            "expression": "embarrassed",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "！",
+          "character": {
+            "name": "izanami",
+            "expression": "surprised",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "もしかしたら、新しい何かが生まれるかも。",
+          "character": {
+            "name": "izanagi",
+            "expression": "embarrassed",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "それって…",
+          "character": {
+            "name": "izanami",
+            "expression": "embarrassed",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "結婚、しよう。イザナミ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "serious",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん…！",
+          "character": {
+            "name": "izanami",
+            "expression": "happy",
+            "position": "right"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scene3-3",
+      "background": "onogoro_island",
+      "bgm": "mystical",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "二人は天の御柱を建て、八尋殿を建てた。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "じゃあ、この柱を回って出会ったところで結婚の儀式をしよう。",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミは右から、僕は左から回るよ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "うん、分かった！",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "choice",
+          "text": "【重要な選択】結婚の儀式での声かけ",
+          "options": [
+            {
+              "text": "原作通り：イザナミから先に声をかけさせる",
+              "next": "scene3-4a",
+              "effects": {
+                "flag": "marriage_original"
+              }
+            },
+            {
+              "text": "運命を変える：僕から先に声をかける",
+              "next": "scene3-4b",
+              "effects": {
+                "flag": "marriage_correct",
+                "affection": 10
+              }
+            },
+            {
+              "text": "新しい方法：一緒に声をかけよう",
+              "next": "scene3-4c",
+              "effects": {
+                "flag": "marriage_together",
+                "affection": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene3-4a",
+      "background": "onogoro_island",
+      "bgm": "mystical",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "柱を回って出会った。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "まあ！なんて素敵な殿方なんでしょう！",
+          "character": {
+            "name": "izanami",
+            "expression": "happy",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "なんて美しい女性なんだ！",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "こうして二人は結ばれた。"
+        },
+        {
+          "type": "narration",
+          "text": "しかし、最初に生まれた子は…"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "この子…ヒルコ（水蛭子）…",
+          "character": {
+            "name": "izanami",
+            "expression": "sad",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "うまくいかなかった…なぜだろう？",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "left"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "高天原に相談すると、女性から先に声をかけたのが良くなかったと言われた。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "もう一度やり直そう。今度は僕から声をかけるよ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "left"
+          }
+        },
+        {
+          "type": "scene_change",
+          "next": "scene3-5"
+        }
+      ]
+    },
+    {
+      "id": "scene3-4b",
+      "background": "onogoro_island",
+      "bgm": "mystical",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "待って、イザナミ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "serious",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "どうしたの？",
+          "character": {
+            "name": "izanami",
+            "expression": "question",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "なんとなくだけど…僕から先に声をかけた方がいい気がする。",
+          "character": {
+            "name": "izanagi",
+            "expression": "serious",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "え？どうして？",
+          "character": {
+            "name": "izanami",
+            "expression": "question",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "分からない。でも、そうした方がいいって…何かが言ってる気がして。",
+          "character": {
+            "name": "izanagi",
+            "expression": "serious",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃんがそう言うなら…",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "柱を回って出会った。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "まあ！なんて美しい女性なんだ！",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "なんて素敵な殿方なんでしょう！",
+          "character": {
+            "name": "izanami",
+            "expression": "happy",
+            "position": "right"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "flash", "color": "#ffd700", "duration": 500 }
+        },
+        {
+          "type": "narration",
+          "text": "【運命が変わった】"
+        },
+        {
+          "type": "narration",
+          "text": "正しい順序で儀式を行ったことで、全てが順調に進み始めた。"
+        },
+        {
+          "type": "scene_change",
+          "next": "scene3-5"
+        }
+      ]
+    },
+    {
+      "id": "scene3-4c",
+      "background": "onogoro_island",
+      "bgm": "mystical",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "ねえ、イザナミ。新しい提案があるんだ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "なあに？",
+          "character": {
+            "name": "izanami",
+            "expression": "question",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "二人一緒に声をかけるのはどう？",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "それって…新しいわね！",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "柱を回って出会った。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ・イザナミ",
+          "text": "なんて素敵な人なんだろう！",
+          "character": null
+        },
+        {
+          "type": "narration",
+          "text": "新しい方法は、予想外の結果をもたらすことになる…"
+        },
+        {
+          "type": "scene_change",
+          "next": "scene3-5"
+        }
+      ]
+    },
+    {
+      "id": "scene3-5",
+      "background": "onogoro_island",
+      "bgm": "peaceful",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "こうして二人は次々と島を生み出していった。"
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "birth" }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "う、生まれる…！うーーーーーーー！！！！",
+          "character": {
+            "name": "izanami",
+            "expression": "normal",
+            "position": "right"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "baby_cry" }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イ、イザナミ…。",
+          "character": {
+            "name": "izanagi",
+            "expression": "surprised",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん…。",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "や、やった！やったよイザナミ！",
+          "character": {
+            "name": "izanagi",
+            "expression": "happy",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "うん！やったぁ！",
+          "character": {
+            "name": "izanami",
+            "expression": "happy",
+            "position": "right"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "淡路島、四国、隠岐、九州、壱岐、対馬、佐渡、そして本州。"
+        },
+        {
+          "type": "narration",
+          "text": "大八島国と呼ばれる日本の基礎が完成した。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "ねえ、お兄ちゃん。今度は神様を生みましょう。",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "そうだね。この国を守る神様が必要だ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "風の神、海の神、山の神…次々と神々が生まれていく。"
+        },
+        {
+          "type": "narration",
+          "text": "二人の幸せな日々は、永遠に続くかに思われた…"
+        },
+        {
+          "type": "scene_change",
+          "next": "chapter4"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>選択肢バグ修正テスト</title>
+    <style>
+        body { 
+            padding: 20px; 
+            font-family: 'Yu Gothic', sans-serif; 
+            background: #f0f0f0;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .choice-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .choice-btn:hover {
+            opacity: 0.9;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>選択肢システムテスト</h1>
+        <p>このテストはローカルサーバーで実行してください</p>
+        
+        <div id="choice-container"></div>
+        <div id="output"></div>
+    </div>
+    
+    <script>
+        // 簡易的な選択肢表示関数
+        function showChoices(prompt, options) {
+            const container = document.getElementById('choice-container');
+            const output = document.getElementById('output');
+            container.innerHTML = '';
+            
+            if (prompt) {
+                const promptElement = document.createElement('h3');
+                promptElement.textContent = prompt;
+                container.appendChild(promptElement);
+            }
+            
+            // 実際に表示される選択肢のインデックスを保持
+            const validOptions = [];
+            
+            options.forEach((option, originalIndex) => {
+                // 条件チェック（今回は全て表示）
+                validOptions.push({ option, originalIndex });
+            });
+            
+            // 有効な選択肢を表示
+            validOptions.forEach((item, displayIndex) => {
+                const button = document.createElement('button');
+                button.className = 'choice-btn';
+                button.textContent = `${String.fromCharCode(65 + displayIndex)}. ${item.option.text}`;
+                
+                // originalIndexを使用して正しい選択肢を参照
+                button.addEventListener('click', () => {
+                    output.innerHTML += `<p class="success">選択: ${item.option.text}</p>`;
+                    output.innerHTML += `<p class="info">インデックス: ${item.originalIndex}</p>`;
+                    output.innerHTML += `<p class="info">次のシーン: ${item.option.next || '未設定'}</p>`;
+                    
+                    if (item.option.effects) {
+                        output.innerHTML += '<p class="info">効果:</p>';
+                        if (item.option.effects.affection !== undefined) {
+                            output.innerHTML += `<p>　愛情度: ${item.option.effects.affection >= 0 ? '+' : ''}${item.option.effects.affection}</p>`;
+                        }
+                        if (item.option.effects.flag) {
+                            output.innerHTML += `<p>　フラグ: ${item.option.effects.flag}</p>`;
+                        }
+                    }
+                    output.innerHTML += '<hr>';
+                });
+                
+                container.appendChild(button);
+            });
+            
+            output.innerHTML += `<p class="success">✓ 選択肢数: ${validOptions.length}</p>`;
+        }
+        
+        // JSONからテストデータを読み込む
+        async function loadTestData() {
+            const output = document.getElementById('output');
+            
+            try {
+                // サーバー経由でJSONを読み込む
+                const response = await fetch('data/scenario/chapter1.json');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                output.innerHTML = '<p class="success">✓ chapter1.json 読み込み成功</p>';
+                
+                // scene1-4を探す
+                const scene14 = data.scenes.find(s => s.id === 'scene1-4');
+                if (!scene14) {
+                    output.innerHTML += '<p class="error">✗ scene1-4が見つかりません</p>';
+                    return;
+                }
+                
+                output.innerHTML += '<p class="success">✓ scene1-4 発見</p>';
+                
+                // 選択肢を探す
+                const choiceLine = scene14.lines.find(l => l.type === 'choice');
+                if (!choiceLine) {
+                    output.innerHTML += '<p class="error">✗ scene1-4に選択肢がありません</p>';
+                    return;
+                }
+                
+                output.innerHTML += '<p class="success">✓ 選択肢発見</p>';
+                output.innerHTML += '<hr>';
+                
+                // 選択肢を表示
+                showChoices(choiceLine.text, choiceLine.options);
+                
+            } catch (error) {
+                output.innerHTML = `<p class="error">エラー: ${error.message}</p>`;
+                output.innerHTML += '<p class="info">このページはローカルサーバー経由でアクセスしてください</p>';
+                output.innerHTML += '<p>1. start-server.bat を実行</p>';
+                output.innerHTML += '<p>2. http://localhost:8000/test-choices.html にアクセス</p>';
+            }
+        }
+        
+        // ページ読み込み時に実行
+        window.addEventListener('DOMContentLoaded', loadTestData);
+    </script>
+</body>
+</html>

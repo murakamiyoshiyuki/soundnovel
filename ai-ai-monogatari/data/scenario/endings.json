@@ -1,0 +1,586 @@
+{
+  "chapter": 6,
+  "title": "終章：それぞれの結末",
+  "scenes": [
+    {
+      "id": "true_end",
+      "condition": "affection >= 70 && flags.waited_at_yomi",
+      "background": "yomi_entrance",
+      "bgm": "sad",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "【TRUE END：愛と哀しみの誓い】"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん、ありがとう。約束を守ってくれて。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ…",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "私ね、お兄ちゃんが大好き。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "だから、お兄ちゃんには生きて、幸せになってほしいの。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "僕だって、イザナミが大好きだ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "だから、離れても、ずっと君を愛してる。",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "私も。ずっと、ここから見守ってる。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃんが作る世界を。私たちの子どもたちを。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "うん。絶対に、素敵な世界にしてみせる。",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "君が夢見た、みんなが幸せになれる世界に。",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "それを聞けて、安心した。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "じゃあ、お兄ちゃん。さようなら。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "そして…ありがとう。愛してる。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "僕も愛してる。永遠に。",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "fadeout", "duration": 3000 }
+        },
+        {
+          "type": "narration",
+          "text": "二人は岩戸を挟んで永遠の別れを告げた。"
+        },
+        {
+          "type": "narration",
+          "text": "しかし、その絆は死によっても断ち切れることはない。"
+        },
+        {
+          "type": "narration",
+          "text": "イザナギは中つ国を、イザナミは黄泉から、"
+        },
+        {
+          "type": "narration",
+          "text": "それぞれの場所で世界を見守り続ける。"
+        },
+        {
+          "type": "narration",
+          "text": ""
+        },
+        {
+          "type": "narration",
+          "text": "これは別離の物語。"
+        },
+        {
+          "type": "narration",
+          "text": "しかし同時に、永遠の愛の物語でもあった。"
+        },
+        {
+          "type": "narration",
+          "text": ""
+        },
+        {
+          "type": "narration",
+          "text": "【TRUE END】"
+        }
+      ]
+    },
+    {
+      "id": "normal_end",
+      "condition": "default",
+      "background": "yomi_entrance",
+      "bgm": "sad",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "【NORMAL END：永遠の別離】"
+        },
+        {
+          "type": "narration",
+          "text": "イザナギは黄泉から逃げ出した。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "なぜ約束を破ったの！",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "毎日1000人ずつヒトを殺してあげるわ！",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "それなら僕は、毎日1500人の赤ん坊を産ませる。",
+          "character": {
+            "name": "izanagi",
+            "expression": "angry",
+            "position": "center"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "fadeout", "duration": 2000 }
+        },
+        {
+          "type": "narration",
+          "text": "こうして、生と死の循環が生まれた。"
+        },
+        {
+          "type": "narration",
+          "text": "それは悲しい別れではあったが、"
+        },
+        {
+          "type": "narration",
+          "text": "同時に世界の理の始まりでもあった。"
+        },
+        {
+          "type": "narration",
+          "text": ""
+        },
+        {
+          "type": "narration",
+          "text": "【NORMAL END】"
+        }
+      ]
+    },
+    {
+      "id": "false_happy_end",
+      "condition": "flags.avoided_fire_god",
+      "background": "onogoro_island",
+      "bgm": "peaceful",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "【FALSE HAPPY END：偽りの幸福】"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん、今日も良い天気ね。",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "そうだね。平和だ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "ずっと、このままでいられたらいいのに。",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "うん…そうだね。",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "fadeout", "duration": 2000 }
+        },
+        {
+          "type": "narration",
+          "text": "二人は火の神を産まず、平穏な日々を過ごした。"
+        },
+        {
+          "type": "narration",
+          "text": "しかし、世界は不完全なまま。"
+        },
+        {
+          "type": "narration",
+          "text": "火がなければ、文明は発展しない。"
+        },
+        {
+          "type": "narration",
+          "text": "鉄を作ることもできない。"
+        },
+        {
+          "type": "narration",
+          "text": ""
+        },
+        {
+          "type": "narration",
+          "text": "これは幸せな結末？"
+        },
+        {
+          "type": "narration",
+          "text": "いや、これは停滞した世界の物語。"
+        },
+        {
+          "type": "narration",
+          "text": "真の幸福とは、なんだろうか――"
+        },
+        {
+          "type": "narration",
+          "text": ""
+        },
+        {
+          "type": "narration",
+          "text": "【FALSE HAPPY END】"
+        }
+      ]
+    },
+    {
+      "id": "bad_end1",
+      "condition": "affection < 30 || flags.opened_door_immediately",
+      "background": "yomi_palace",
+      "bgm": "horror",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "【BAD END 1：黄泉の住人】"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ！",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "あ…見たのね。私の醜い姿を。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "違う、僕は…",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "もういい。お兄ちゃんも、ここで一緒に死んで。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "そうすれば、ずっと一緒にいられるから。",
+          "character": null
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "glitch", "duration": 1000 }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "fadeout", "duration": 2000 }
+        },
+        {
+          "type": "narration",
+          "text": "イザナギは黄泉の軍勢に捕らえられ、"
+        },
+        {
+          "type": "narration",
+          "text": "二人とも黄泉の住人となった。"
+        },
+        {
+          "type": "narration",
+          "text": "中つ国は創造主を失い、"
+        },
+        {
+          "type": "narration",
+          "text": "永遠に混沌の世界のまま…"
+        },
+        {
+          "type": "narration",
+          "text": ""
+        },
+        {
+          "type": "narration",
+          "text": "【BAD END 1】"
+        }
+      ]
+    },
+    {
+      "id": "bad_end2",
+      "condition": "flags.stayed_in_yomi",
+      "background": "yomi_palace",
+      "bgm": "sad",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "【BAD END 2：神の終焉】"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "僕も…イザナミと一緒に…",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "center"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "sword_slash" }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "red_filter", "opacity": 0.8 }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "fadeout", "duration": 3000 }
+        },
+        {
+          "type": "narration",
+          "text": "イザナギは自ら命を絶った。"
+        },
+        {
+          "type": "narration",
+          "text": "しかし、死者の国で再会できたのは、"
+        },
+        {
+          "type": "narration",
+          "text": "もはやイザナミではない何かだった。"
+        },
+        {
+          "type": "narration",
+          "text": ""
+        },
+        {
+          "type": "narration",
+          "text": "世界は創造主を失い、崩壊への道を辿る。"
+        },
+        {
+          "type": "narration",
+          "text": "これは、最も救いのない結末――"
+        },
+        {
+          "type": "narration",
+          "text": ""
+        },
+        {
+          "type": "narration",
+          "text": "【BAD END 2】"
+        }
+      ]
+    },
+    {
+      "id": "secret_end",
+      "condition": "affection >= 80 && flags.called_kukurihime",
+      "background": "heaven_bridge",
+      "bgm": "mystical",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "【SECRET END：菊理媛の仲裁】"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ククリヒメ",
+          "text": "私の力で、年に一度だけ会えるようにしましょう。",
+          "character": {
+            "name": "kukurihime",
+            "expression": "compassionate",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "本当ですか！？",
+          "character": {
+            "name": "izanagi",
+            "expression": "surprised",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "でも、私の姿は…",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ククリヒメ",
+          "text": "その日だけは、元の美しい姿に戻れます。",
+          "character": {
+            "name": "kukurihime",
+            "expression": "compassionate",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ククリヒメ",
+          "text": "ただし、触れることはできません。",
+          "character": {
+            "name": "kukurihime",
+            "expression": "compassionate",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "それでも…会えるだけで。",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "うん…会えるだけで、幸せ。",
+          "character": null
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "flash", "color": "#ffd700", "duration": 1000 }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "fadeout", "duration": 3000 }
+        },
+        {
+          "type": "narration",
+          "text": "こうして二人は年に一度、七夕の日に会うことを許された。"
+        },
+        {
+          "type": "narration",
+          "text": "それは完全な再会ではないが、"
+        },
+        {
+          "type": "narration",
+          "text": "永遠の別離でもない。"
+        },
+        {
+          "type": "narration",
+          "text": ""
+        },
+        {
+          "type": "narration",
+          "text": "愛は時に、奇跡を起こす。"
+        },
+        {
+          "type": "narration",
+          "text": "たとえそれが、不完全な奇跡だとしても――"
+        },
+        {
+          "type": "narration",
+          "text": ""
+        },
+        {
+          "type": "narration",
+          "text": "【SECRET END】"
+        }
+      ]
+    }
+  ]
+}

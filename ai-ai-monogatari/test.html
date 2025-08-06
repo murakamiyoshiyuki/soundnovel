@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>愛哀物語 - デバッグテスト</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #000;
+            color: #0f0;
+            padding: 20px;
+        }
+        button {
+            background: #222;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #333;
+        }
+        #log {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #0f0;
+            height: 400px;
+            overflow-y: auto;
+        }
+        .log-entry {
+            margin: 2px 0;
+            padding: 2px;
+        }
+        .error { color: #f00; }
+        .warn { color: #ff0; }
+        .info { color: #0ff; }
+    </style>
+</head>
+<body>
+    <h1>愛哀物語 - デバッグテスト</h1>
+    
+    <div>
+        <button onclick="testScenarioLoad()">シナリオ読み込みテスト</button>
+        <button onclick="testChapter1()">第1章テスト</button>
+        <button onclick="testChoices()">選択肢テスト</button>
+        <button onclick="clearLog()">ログクリア</button>
+    </div>
+    
+    <div id="log"></div>
+    
+    <script>
+        const logDiv = document.getElementById('log');
+        
+        function log(message, type = 'info') {
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logDiv.appendChild(entry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+        
+        function clearLog() {
+            logDiv.innerHTML = '';
+        }
+        
+        async function testScenarioLoad() {
+            log('=== シナリオ読み込みテスト開始 ===');
+            
+            const chapters = ['prologue', 'chapter1', 'chapter2', 'chapter3', 'chapter4', 'chapter5', 'endings'];
+            
+            for (const chapter of chapters) {
+                try {
+                    const response = await fetch(`data/scenario/${chapter}.json`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        log(`✓ ${chapter}.json - シーン数: ${data.scenes.length}`, 'info');
+                        
+                        // 各シーンをチェック
+                        data.scenes.forEach((scene, index) => {
+                            if (!scene.id) {
+                                log(`  警告: シーン${index}にIDがありません`, 'warn');
+                            }
+                            
+                            // scene_changeのnext先をチェック
+                            scene.lines.forEach((line, lineIndex) => {
+                                if (line.type === 'scene_change' && line.next) {
+                                    log(`  Scene ${scene.id} -> ${line.next}`, 'info');
+                                }
+                                if (line.type === 'choice' && line.options) {
+                                    line.options.forEach((opt, optIndex) => {
+                                        if (opt.next) {
+                                            log(`  Choice ${optIndex}: ${opt.text.substring(0, 20)}... -> ${opt.next}`, 'info');
+                                        }
+                                    });
+                                }
+                            });
+                        });
+                    } else {
+                        log(`✗ ${chapter}.json - 読み込み失敗`, 'error');
+                    }
+                } catch (error) {
+                    log(`✗ ${chapter}.json - エラー: ${error.message}`, 'error');
+                }
+            }
+        }
+        
+        async function testChapter1() {
+            log('=== 第1章構造テスト ===');
+            
+            try {
+                const response = await fetch('data/scenario/chapter1.json');
+                const data = await response.json();
+                
+                log(`シーン数: ${data.scenes.length}`);
+                
+                // 各シーンの詳細
+                data.scenes.forEach(scene => {
+                    log(`Scene: ${scene.id} - Lines: ${scene.lines.length}`);
+                    
+                    // 最後の行をチェック
+                    const lastLine = scene.lines[scene.lines.length - 1];
+                    if (lastLine) {
+                        if (lastLine.type === 'choice') {
+                            log(`  最終行: 選択肢 (${lastLine.options.length}個)`, 'info');
+                            lastLine.options.forEach((opt, i) => {
+                                log(`    ${i+1}. ${opt.text.substring(0, 30)}...`);
+                                log(`       next: ${opt.next || 'なし'}`, opt.next ? 'info' : 'warn');
+                            });
+                        } else if (lastLine.type === 'scene_change') {
+                            log(`  最終行: シーン移動 -> ${lastLine.next}`, 'info');
+                        } else {
+                            log(`  最終行: ${lastLine.type}`, 'warn');
+                        }
+                    }
+                });
+                
+            } catch (error) {
+                log(`エラー: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testChoices() {
+            log('=== 選択肢構造テスト ===');
+            
+            try {
+                const response = await fetch('data/scenario/chapter1.json');
+                const data = await response.json();
+                
+                // scene1-4を探す
+                const scene14 = data.scenes.find(s => s.id === 'scene1-4');
+                if (scene14) {
+                    log('scene1-4 found');
+                    
+                    // 選択肢を探す
+                    const choiceLine = scene14.lines.find(l => l.type === 'choice');
+                    if (choiceLine) {
+                        log(`選択肢: "${choiceLine.text}"`);
+                        log(`選択肢数: ${choiceLine.options.length}`);
+                        
+                        choiceLine.options.forEach((opt, i) => {
+                            log(`${i+1}. ${opt.text}`);
+                            log(`   -> ${opt.next || '(next未設定)'}`);
+                            log(`   効果: 愛情度${opt.effects?.affection >= 0 ? '+' : ''}${opt.effects?.affection || 0}`);
+                            if (opt.effects?.flag) {
+                                log(`   フラグ: ${opt.effects.flag}`);
+                            }
+                        });
+                    } else {
+                        log('選択肢が見つかりません', 'error');
+                    }
+                } else {
+                    log('scene1-4が見つかりません', 'error');
+                }
+                
+                // 分岐先シーンの存在確認
+                log('\n分岐先シーンの確認:');
+                const branchScenes = ['scene1-5a', 'scene1-5b', 'scene1-5c'];
+                branchScenes.forEach(sceneId => {
+                    const scene = data.scenes.find(s => s.id === sceneId);
+                    if (scene) {
+                        log(`✓ ${sceneId} exists (lines: ${scene.lines.length})`, 'info');
+                        // 最後の行を確認
+                        const lastLine = scene.lines[scene.lines.length - 1];
+                        if (lastLine.type === 'scene_change') {
+                            log(`  -> ${lastLine.next}`, 'info');
+                        }
+                    } else {
+                        log(`✗ ${sceneId} not found`, 'error');
+                    }
+                });
+                
+            } catch (error) {
+                log(`エラー: ${error.message}`, 'error');
+            }
+        }
+        
+        // 初期ログ
+        log('デバッグテストツール起動', 'info');
+        log('ブラウザのコンソールも確認してください', 'warn');
+    </script>
+</body>
+</html>

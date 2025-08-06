@@ -1,0 +1,607 @@
+{
+  "chapter": 5,
+  "title": "第5章：黄泉の国",
+  "scenes": [
+    {
+      "id": "scene5-1",
+      "background": "yomi_entrance",
+      "bgm": "horror",
+      "lines": [
+        {
+          "type": "effect",
+          "effect": { "type": "yomi_effect" }
+        },
+        {
+          "type": "narration",
+          "text": "黄泉平坂（よもつひらさか）。"
+        },
+        {
+          "type": "narration",
+          "text": "生者と死者の世界を分ける境界。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "この先が黄泉の国…死者の世界か。",
+          "character": {
+            "name": "izanagi",
+            "expression": "serious",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "この坂、神様とかヒトどころか、生き物の気配すらないや。",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "本当にここを下れば死者の世界になるんだな。",
+          "character": {
+            "name": "izanagi",
+            "expression": "serious",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "……。",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "よし…。イザナミ、待っててくれよ…。絶対、迎えに行くから。",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "center"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "footsteps_echo" }
+        },
+        {
+          "type": "narration",
+          "text": "暗い坂道を下っていく。"
+        },
+        {
+          "type": "narration",
+          "text": "一歩進むごとに、生の世界から遠ざかっていく…"
+        }
+      ]
+    },
+    {
+      "id": "scene5-2",
+      "background": "yomi_palace",
+      "bgm": "horror",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "黄泉の宮殿の前に着いた。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ！イザナミ、僕だ、イザナギだ！",
+          "character": {
+            "name": "izanagi",
+            "expression": "serious",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "そこにいないのか？",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "もしいるんなら、返事をしてくれ、頼む！",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "center"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "silence" }
+        },
+        {
+          "type": "wait",
+          "duration": 2000
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お・に・い・ちゃ・ん…？",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "………！！",
+          "character": {
+            "name": "izanagi",
+            "expression": "surprised",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "おにいちゃん、なの…？",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ！そうだよ、僕だよ！",
+          "character": {
+            "name": "izanagi",
+            "expression": "happy",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "どうして…ここに…？",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "迎えに来たんだ！一緒に帰ろう！",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "………。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "遅かった…。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "え？",
+          "character": {
+            "name": "izanagi",
+            "expression": "surprised",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "私、もう黄泉の食べ物を食べてしまったの。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "だから、もう戻れない…",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "そんな…",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "でも…黄泉の神様に相談してみる。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "少し待っていて。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "その間、絶対に中を見ないで。約束して。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "分かった。約束する。",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scene5-3",
+      "background": "yomi_palace",
+      "bgm": "horror",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "長い時間が過ぎた。"
+        },
+        {
+          "type": "narration",
+          "text": "イザナミは戻ってこない。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "遅い…何をしているんだろう…",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        },
+        {
+          "type": "choice",
+          "text": "【最終選択】黄泉での決断",
+          "options": [
+            {
+              "text": "約束を守って待つ",
+              "next": "scene5-4a",
+              "effects": {
+                "flag": "waited_at_yomi",
+                "affection": 20
+              }
+            },
+            {
+              "text": "すぐに扉を開ける",
+              "next": "scene5-4b",
+              "effects": {
+                "flag": "opened_door_immediately",
+                "affection": -30
+              }
+            },
+            {
+              "text": "ククリヒメ様を呼ぶ（条件：愛情度80以上）",
+              "next": "scene5-4c",
+              "condition": "affection >= 80",
+              "effects": {
+                "flag": "called_kukurihime"
+              }
+            },
+            {
+              "text": "一緒に黄泉に留まる",
+              "next": "scene5-4d",
+              "effects": {
+                "flag": "stayed_in_yomi",
+                "affection": 10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene5-4a",
+      "background": "yomi_palace",
+      "bgm": "sad",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "待つんだ。イザナミを信じて待つんだ。"
+        },
+        {
+          "type": "narration",
+          "text": "それが、僕にできる唯一のことだ。"
+        },
+        {
+          "type": "wait",
+          "duration": 3000
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん…まだいる？",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "いるよ。ずっといる。",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "ありがとう…でも、もう遅いの。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "それでも、僕は君を愛してる。",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "私も…ずっと愛してる。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "だから、お願い。私の醜い姿を見ないで。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "美しい思い出のまま、別れましょう。",
+          "character": null
+        },
+        {
+          "type": "scene_change",
+          "next": "endings"
+        }
+      ]
+    },
+    {
+      "id": "scene5-4b",
+      "background": "yomi_palace",
+      "bgm": "horror",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "もう待てない！",
+          "character": {
+            "name": "izanagi",
+            "expression": "angry",
+            "position": "center"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "door_open" }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "flash", "color": "#ff0000", "duration": 300 }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "glitch", "duration": 500 }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "！！！",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "center"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "そこには、腐敗した恐ろしい姿のイザナミが…"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "あ…見たのね。私の醜い姿を。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "違う、僕は…",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "もういい。お兄ちゃんも、ここで一緒に死んで。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "そうすれば、ずっと一緒にいられるから。",
+          "character": null
+        },
+        {
+          "type": "scene_change",
+          "next": "endings"
+        }
+      ]
+    },
+    {
+      "id": "scene5-4c",
+      "background": "yomi_palace",
+      "bgm": "mystical",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "ククリヒメ様！どうか、どうか助けてください！",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "center"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "flash", "color": "#9370db", "duration": 1000 }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ククリヒメ",
+          "text": "イザナギよ。そなたの愛は真実か？",
+          "character": {
+            "name": "kukurihime",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "はい！イザナミなしでは生きていけません。",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ククリヒメ",
+          "text": "イザナミよ。そなたもまた、同じ思いか？",
+          "character": {
+            "name": "kukurihime",
+            "expression": "compassionate",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "…はい。でも、もう…",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ククリヒメ",
+          "text": "ならば、一つの道がある。",
+          "character": {
+            "name": "kukurihime",
+            "expression": "compassionate",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "ククリヒメ",
+          "text": "完全な再会は叶わずとも、永遠の絆を結ぶ道が。",
+          "character": {
+            "name": "kukurihime",
+            "expression": "compassionate",
+            "position": "center"
+          }
+        },
+        {
+          "type": "scene_change",
+          "next": "endings"
+        }
+      ]
+    },
+    {
+      "id": "scene5-4d",
+      "background": "yomi_palace",
+      "bgm": "sad",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ、僕も一緒に黄泉に留まる。",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "え…？",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "君のいない世界なんて意味がない。",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "でも、お兄ちゃんはまだ生きてる…",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "生きていても、心は死んでいる。",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん…",
+          "character": null
+        },
+        {
+          "type": "scene_change",
+          "next": "endings"
+        }
+      ]
+    }
+  ]
+}

@@ -12,6 +12,7 @@ class GameEngine {
         this.backlog = [];
         this.isTextAnimating = false;
         this.currentTextAnimation = null;
+        this.debugLogging = false; // デバッグログのON/OFF
         
         this.gameState = {
             flags: {
@@ -212,11 +213,16 @@ class GameEngine {
     }
     
     async playScene() {
+        if (this.debugLogging) console.log('playScene: chapter', this.currentChapter, 'scene', this.currentScene);
         const chapter = this.scenarios[this.currentChapter];
-        if (!chapter) return;
+        if (!chapter) {
+            if (this.debugLogging) console.log('No chapter loaded for:', this.currentChapter);
+            return;
+        }
         
         const scene = chapter.scenes[this.currentScene];
         if (!scene) {
+            if (this.debugLogging) console.log('No scene found, moving to next chapter');
             // 章の終わり、次の章へ
             this.currentChapter++;
             this.currentScene = 0;
@@ -224,6 +230,8 @@ class GameEngine {
             await this.loadNextChapter();
             return;
         }
+        
+        if (this.debugLogging) console.log('Playing scene:', scene.id);
         
         // 背景設定
         if (scene.background) {
@@ -244,13 +252,18 @@ class GameEngine {
         const scene = chapter.scenes[this.currentScene];
         const line = scene.lines[this.currentLine];
         
+        console.log('processLine: line', this.currentLine, 'of', scene?.lines?.length || 0);
+        
         if (!line) {
+            console.log('No more lines in scene, moving to next scene');
             // シーンの終わり、次のシーンへ
             this.currentScene++;
             this.currentLine = 0;
             this.playScene();
             return;
         }
+        
+        console.log('Line type:', line.type);
         
         // 既読フラグを立てる
         const textId = `${this.currentChapter}-${this.currentScene}-${this.currentLine}`;
@@ -351,6 +364,7 @@ class GameEngine {
     }
     
     showChoices(prompt, options) {
+        console.log('Showing choices:', options);
         this.elements.choiceWindow.style.display = 'block';
         this.elements.choiceContainer.innerHTML = '';
         
@@ -361,16 +375,68 @@ class GameEngine {
             this.elements.choiceContainer.appendChild(promptElement);
         }
         
-        options.forEach((option, index) => {
+        // 実際に表示される選択肢のインデックスを保持
+        const validOptions = [];
+        
+        options.forEach((option, originalIndex) => {
+            // 条件チェック
+            if (option.condition) {
+                const conditionMet = this.evaluateCondition(option.condition);
+                if (!conditionMet) {
+                    console.log('Skipping option due to condition:', option.text, option.condition);
+                    // 条件を満たさない選択肢は表示しない
+                    return;
+                }
+            }
+            
+            validOptions.push({ option, originalIndex });
+        });
+        
+        // 有効な選択肢を表示
+        validOptions.forEach((item, displayIndex) => {
             const button = document.createElement('button');
             button.className = 'choice-btn';
-            button.textContent = option.text;
-            button.addEventListener('click', () => this.selectChoice(index, option));
+            button.textContent = item.option.text;
+            // originalIndexを使用して正しい選択肢を参照
+            button.addEventListener('click', () => this.selectChoice(item.originalIndex, item.option));
             this.elements.choiceContainer.appendChild(button);
+            console.log(`Choice ${displayIndex + 1}: "${item.option.text}" -> ${item.option.next}`);
         });
+        
+        console.log('Choice buttons created:', validOptions.length);
+    }
+    
+    evaluateCondition(condition) {
+        // 条件式を評価（簡易的な実装）
+        // 例: "affection >= 80"
+        if (condition.includes('affection')) {
+            const match = condition.match(/affection\s*([><=]+)\s*(\d+)/);
+            if (match) {
+                const operator = match[1];
+                const value = parseInt(match[2]);
+                const affection = this.gameState.affection;
+                
+                switch(operator) {
+                    case '>=': return affection >= value;
+                    case '>': return affection > value;
+                    case '<=': return affection <= value;
+                    case '<': return affection < value;
+                    case '==': return affection == value;
+                }
+            }
+        }
+        
+        // フラグチェック
+        if (condition.includes('flags.')) {
+            const flagName = condition.split('flags.')[1];
+            return this.gameState.flags[flagName] === true;
+        }
+        
+        return true; // デフォルトは表示
     }
     
     selectChoice(index, option) {
+        console.log('Selected choice:', index, option);
         this.elements.choiceWindow.style.display = 'none';
         
         // 選択を記録
@@ -385,8 +451,16 @@ class GameEngine {
         // エフェクトを適用
         if (option.effects) {
             if (option.effects.affection !== undefined) {
+                const oldAffection = this.gameState.affection;
                 this.gameState.affection += option.effects.affection;
                 this.gameState.affection = Math.max(0, Math.min(100, this.gameState.affection));
+                console.log('Affection changed:', oldAffection, '->', this.gameState.affection);
+                
+                // 愛情度変化の表示（デバッグ用）
+                if (this.debugPanel && this.debugPanel.style.display === 'block') {
+                    this.showAffectionChange(option.effects.affection);
+                    this.updateDebugInfo();
+                }
             }
             if (option.effects.trust !== undefined) {
                 this.gameState.trust += option.effects.trust;
@@ -394,6 +468,7 @@ class GameEngine {
             }
             if (option.effects.flag) {
                 this.gameState.flags[option.effects.flag] = true;
+                console.log('Flag set:', option.effects.flag);
             }
             if (option.effects.route) {
                 this.gameState.route = option.effects.route;
@@ -402,25 +477,58 @@ class GameEngine {
         
         // 次のシーンへ
         if (option.next) {
+            console.log('Changing scene to:', option.next);
             this.changeScene(option.next);
         } else {
+            console.log('No next scene specified, advancing line');
             this.currentLine++;
             this.processLine();
         }
     }
     
     changeScene(sceneId) {
-        // シーンIDから次のシーンを探す
-        for (let i = 0; i < this.scenarios[this.currentChapter].scenes.length; i++) {
-            if (this.scenarios[this.currentChapter].scenes[i].id === sceneId) {
-                this.currentScene = i;
+        console.log('changeScene called with:', sceneId);
+        console.log('Current chapter:', this.currentChapter, 'Current scene:', this.currentScene);
+        
+        // chapter移動の場合
+        if (sceneId && sceneId.startsWith('chapter')) {
+            const chapterMap = {
+                'chapter1': 1,
+                'chapter2': 2,
+                'chapter3': 3,
+                'chapter4': 4,
+                'chapter5': 5,
+                'endings': 6
+            };
+            
+            if (chapterMap[sceneId] !== undefined) {
+                console.log('Moving to chapter:', chapterMap[sceneId]);
+                this.currentChapter = chapterMap[sceneId];
+                this.currentScene = 0;
                 this.currentLine = 0;
-                this.playScene();
+                this.loadNextChapter();
                 return;
             }
         }
         
+        // 同じchapter内のシーンIDから次のシーンを探す
+        if (this.scenarios[this.currentChapter]) {
+            for (let i = 0; i < this.scenarios[this.currentChapter].scenes.length; i++) {
+                if (this.scenarios[this.currentChapter].scenes[i].id === sceneId) {
+                    console.log('Found scene at index:', i);
+                    this.currentScene = i;
+                    this.currentLine = 0;
+                    this.playScene();
+                    return;
+                }
+            }
+            console.log('Scene not found in current chapter:', sceneId);
+        } else {
+            console.log('No scenarios loaded for chapter:', this.currentChapter);
+        }
+        
         // 見つからない場合は次のシーンへ
+        console.log('Scene not found, moving to next scene');
         this.currentScene++;
         this.currentLine = 0;
         this.playScene();
@@ -714,6 +822,32 @@ class GameEngine {
         this.gameState.affection = Math.max(0, Math.min(100, this.gameState.affection));
         this.updateDebugInfo();
         console.log('愛情度:', this.gameState.affection);
+    }
+    
+    showAffectionChange(amount) {
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: ${amount > 0 ? '#00ff00' : '#ff0000'};
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid ${amount > 0 ? '#00ff00' : '#ff0000'};
+            z-index: 9999;
+            font-size: 18px;
+            animation: fadeIn 0.3s;
+        `;
+        notification.textContent = `愛情度 ${amount > 0 ? '+' : ''}${amount}`;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'fadeOut 0.3s';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 2000);
     }
     
     jumpToChapter(chapterNum) {

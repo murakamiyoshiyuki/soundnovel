@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>愛哀物語 - ゲームテスト</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        #debug-output {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 400px;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #0f0;
+            color: #0f0;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            overflow-y: auto;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <!-- ゲーム要素は元のindex.htmlと同じ -->
+        <div id="header-menu">
+            <button id="menu-btn" class="header-btn">メニュー</button>
+            <button id="save-btn" class="header-btn">セーブ</button>
+            <button id="load-btn" class="header-btn">ロード</button>
+            <button id="config-btn" class="header-btn">設定</button>
+            <button id="skip-btn" class="header-btn">スキップ</button>
+            <button id="auto-btn" class="header-btn">オート</button>
+        </div>
+
+        <div id="main-screen">
+            <div id="background-layer"></div>
+            <div id="effect-layer"></div>
+            <div id="character-layer">
+                <div id="character-left" class="character-position"></div>
+                <div id="character-center" class="character-position"></div>
+                <div id="character-right" class="character-position"></div>
+            </div>
+            <div id="text-window">
+                <div id="speaker-name"></div>
+                <div id="text-content"></div>
+                <div id="next-indicator">▼</div>
+            </div>
+            <div id="choice-window" style="display: none;">
+                <div id="choice-container"></div>
+            </div>
+        </div>
+
+        <div id="title-screen">
+            <h1 class="title">愛哀物語</h1>
+            <p class="subtitle">- デバッグモード -</p>
+            <div class="title-menu">
+                <button onclick="startAtChapter1()">第1章から開始</button>
+                <button onclick="startAtChoice()">選択肢シーンから開始</button>
+                <button onclick="showDebugLog()">デバッグログ表示</button>
+            </div>
+        </div>
+
+        <div id="save-load-screen" style="display: none;">
+            <div class="save-load-header">
+                <h2 id="save-load-title">セーブ</h2>
+                <button id="save-load-close" class="close-btn">×</button>
+            </div>
+            <div id="save-load-slots"></div>
+        </div>
+
+        <div id="config-screen" style="display: none;">
+            <div class="config-header">
+                <h2>設定</h2>
+                <button id="config-close" class="close-btn">×</button>
+            </div>
+            <div class="config-content">
+                <div class="config-item">
+                    <label>文字速度</label>
+                    <input type="range" id="text-speed" min="1" max="100" value="50">
+                </div>
+                <div class="config-item">
+                    <label>オート速度</label>
+                    <input type="range" id="auto-speed" min="1" max="100" value="50">
+                </div>
+                <div class="config-item">
+                    <label>BGM音量</label>
+                    <input type="range" id="bgm-volume" min="0" max="100" value="70">
+                </div>
+                <div class="config-item">
+                    <label>SE音量</label>
+                    <input type="range" id="se-volume" min="0" max="100" value="70">
+                </div>
+            </div>
+        </div>
+
+        <div id="backlog" style="display: none;">
+            <div class="backlog-header">
+                <h2>バックログ</h2>
+                <button id="backlog-close" class="close-btn">×</button>
+            </div>
+            <div id="backlog-content"></div>
+        </div>
+    </div>
+
+    <!-- デバッグ出力 -->
+    <div id="debug-output"></div>
+
+    <!-- JavaScript読み込み -->
+    <script src="js/game-engine.js"></script>
+    <script src="js/scenario-loader.js"></script>
+    <script src="js/save-system.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/audio-manager.js"></script>
+    
+    <script>
+        let game;
+        const debugOutput = document.getElementById('debug-output');
+        
+        // コンソールログをキャプチャ
+        const originalLog = console.log;
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            const message = args.map(arg => 
+                typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg
+            ).join(' ');
+            
+            if (debugOutput) {
+                debugOutput.innerHTML += message + '\n';
+                debugOutput.scrollTop = debugOutput.scrollHeight;
+            }
+        };
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            game = new GameEngine();
+            game.init();
+            
+            // デバッグ用にグローバル変数として公開
+            window.game = game;
+        });
+        
+        async function startAtChapter1() {
+            console.log('=== Starting at Chapter 1 ===');
+            game.currentChapter = 1;
+            game.currentScene = 0;
+            game.currentLine = 0;
+            
+            game.elements.titleScreen.style.display = 'none';
+            game.elements.mainScreen.style.display = 'block';
+            
+            await game.scenarioLoader.loadChapter('chapter1');
+            game.playScene();
+        }
+        
+        async function startAtChoice() {
+            console.log('=== Starting at Choice Scene ===');
+            game.currentChapter = 1;
+            game.currentScene = 3; // scene1-4のインデックス
+            game.currentLine = 0;
+            
+            game.elements.titleScreen.style.display = 'none';
+            game.elements.mainScreen.style.display = 'block';
+            
+            await game.scenarioLoader.loadChapter('chapter1');
+            
+            // scene1-4を探す
+            for (let i = 0; i < game.scenarios[1].scenes.length; i++) {
+                if (game.scenarios[1].scenes[i].id === 'scene1-4') {
+                    game.currentScene = i;
+                    break;
+                }
+            }
+            
+            // 選択肢の直前まで進める
+            const scene = game.scenarios[1].scenes[game.currentScene];
+            for (let i = 0; i < scene.lines.length; i++) {
+                if (scene.lines[i].type === 'choice') {
+                    game.currentLine = i - 1;
+                    break;
+                }
+            }
+            
+            game.playScene();
+        }
+        
+        function showDebugLog() {
+            const logDiv = document.getElementById('debug-output');
+            logDiv.style.display = logDiv.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        // ゲーム状態を監視
+        setInterval(() => {
+            if (game && game.debugPanel) {
+                const statusDiv = document.createElement('div');
+                statusDiv.style.cssText = `
+                    position: fixed;
+                    top: 10px;
+                    left: 10px;
+                    background: rgba(0, 0, 0, 0.8);
+                    color: #0f0;
+                    padding: 5px 10px;
+                    font-family: monospace;
+                    font-size: 12px;
+                    z-index: 9999;
+                `;
+                statusDiv.textContent = `Ch:${game.currentChapter} Sc:${game.currentScene} Ln:${game.currentLine} | 愛情:${game.gameState.affection}`;
+                statusDiv.id = 'status-display';
+                
+                const oldStatus = document.getElementById('status-display');
+                if (oldStatus) {
+                    oldStatus.remove();
+                }
+                document.body.appendChild(statusDiv);
+            }
+        }, 100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>直接テスト</title>
+    <style>
+        body { padding: 20px; font-family: monospace; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+    </style>
+</head>
+<body>
+    <h1>JSONファイル直接テスト</h1>
+    <button onclick="testLoad()">テスト実行</button>
+    <div id="output"></div>
+    
+    <script>
+        function testLoad() {
+            const output = document.getElementById('output');
+            output.innerHTML = '<p>テスト開始...</p>';
+            
+            // XMLHttpRequestを使用（古いが確実な方法）
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'data/scenario/chapter1.json', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        try {
+                            const data = JSON.parse(xhr.responseText);
+                            output.innerHTML += '<p class="success">✓ chapter1.json 読み込み成功</p>';
+                            output.innerHTML += '<p>シーン数: ' + data.scenes.length + '</p>';
+                            
+                            // scene1-4を探す
+                            let scene14Index = -1;
+                            for (let i = 0; i < data.scenes.length; i++) {
+                                if (data.scenes[i].id === 'scene1-4') {
+                                    scene14Index = i;
+                                    break;
+                                }
+                            }
+                            
+                            if (scene14Index >= 0) {
+                                output.innerHTML += '<p class="success">✓ scene1-4 found at index ' + scene14Index + '</p>';
+                                const scene = data.scenes[scene14Index];
+                                
+                                // 選択肢を探す
+                                let choiceFound = false;
+                                for (let i = 0; i < scene.lines.length; i++) {
+                                    if (scene.lines[i].type === 'choice') {
+                                        choiceFound = true;
+                                        const choice = scene.lines[i];
+                                        output.innerHTML += '<p class="success">✓ 選択肢発見: "' + choice.text + '"</p>';
+                                        output.innerHTML += '<p>選択肢数: ' + choice.options.length + '</p>';
+                                        
+                                        for (let j = 0; j < choice.options.length; j++) {
+                                            const opt = choice.options[j];
+                                            output.innerHTML += '<p class="info">' + (j+1) + '. ' + opt.text.substring(0, 30) + '...</p>';
+                                        }
+                                        break;
+                                    }
+                                }
+                                
+                                if (!choiceFound) {
+                                    output.innerHTML += '<p class="error">✗ scene1-4に選択肢がありません</p>';
+                                }
+                                
+                            } else {
+                                output.innerHTML += '<p class="error">✗ scene1-4 not found</p>';
+                            }
+                            
+                        } catch (e) {
+                            output.innerHTML += '<p class="error">✗ JSONパースエラー: ' + e.message + '</p>';
+                        }
+                    } else {
+                        output.innerHTML += '<p class="error">✗ ファイル読み込みエラー: ' + xhr.status + '</p>';
+                        output.innerHTML += '<p>現在のURL: ' + window.location.href + '</p>';
+                        output.innerHTML += '<p>リクエストしたパス: data/scenario/chapter1.json</p>';
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

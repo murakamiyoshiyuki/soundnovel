@@ -880,6 +880,7 @@
           "options": [
             {
               "text": "絶対に一緒に行こう。約束だ",
+              "next": "scene1-5a",
               "effects": {
                 "affection": 15,
                 "flag": "promise_made"
@@ -887,17 +888,198 @@
             },
             {
               "text": "イザナミがどうしてもっていうんなら、考えてやってもいいけど",
+              "next": "scene1-5b",
               "effects": {
                 "affection": 5
               }
             },
             {
               "text": "その時になったら考えるよ",
+              "next": "scene1-5c",
               "effects": {
                 "affection": -5
               }
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "scene1-5a",
+      "background": "nakatsu_view",
+      "bgm": "mystical",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "絶対に一緒に行こう。約束だ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "本当？！約束だよ！",
+          "character": {
+            "name": "izanami",
+            "expression": "happy",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "ああ、約束する。",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "center"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "二人は小指を絡めて約束を交わした。"
+        },
+        {
+          "type": "narration",
+          "text": "この約束が、後の運命を大きく左右することになるとは…"
+        },
+        {
+          "type": "narration",
+          "text": "この時の二人には、知る由もなかった。"
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "fadeout", "duration": 2000 }
+        },
+        {
+          "type": "scene_change",
+          "next": "chapter2"
+        }
+      ]
+    },
+    {
+      "id": "scene1-5b",
+      "background": "nakatsu_view",
+      "bgm": "mystical",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミがどうしてもっていうんなら、考えてやってもいいけど。",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "もう、素直じゃないんだから。",
+          "character": {
+            "name": "izanami",
+            "expression": "pout",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "でも、考えてくれるんだね？",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "まあ、その時になったらな。",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "center"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "イザナミは少し寂しそうな笑顔を浮かべた。"
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "fadeout", "duration": 2000 }
+        },
+        {
+          "type": "scene_change",
+          "next": "chapter2"
+        }
+      ]
+    },
+    {
+      "id": "scene1-5c",
+      "background": "nakatsu_view",
+      "bgm": "mystical",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "その時になったら考えるよ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "そう…",
+          "character": {
+            "name": "izanami",
+            "expression": "sad",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "まだ先の話だろ？",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "うん…そうね。",
+          "character": {
+            "name": "izanami",
+            "expression": "sad",
+            "position": "right"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "イザナミは寂しそうに俯いた。"
+        },
+        {
+          "type": "narration",
+          "text": "この選択が、二人の運命にどんな影響を与えるのか…"
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "fadeout", "duration": 2000 }
+        },
+        {
+          "type": "scene_change",
+          "next": "chapter2"
         }
       ]
     }

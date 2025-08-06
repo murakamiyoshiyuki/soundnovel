@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>愛哀物語 - ゲーム起動ガイド</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Yu Gothic', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .method {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        .method h2 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .steps {
+            margin: 15px 0;
+        }
+        .step {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px 5px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        .button:hover {
+            background: #5a67d8;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .code {
+            background: #2d3748;
+            color: #48bb78;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .status.error {
+            background: #fed7d7;
+            color: #c53030;
+        }
+        .status.success {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 愛哀物語 - 起動ガイド</h1>
+        
+        <div id="status" class="status error">
+            ⚠️ ブラウザのセキュリティ制限により、直接HTMLファイルを開いてもゲームが動作しません。
+        </div>
+
+        <div class="method">
+            <h2>方法1: ローカルサーバーを起動する（推奨）</h2>
+            <div class="steps">
+                <div class="step">
+                    <strong>ステップ1:</strong> 以下のボタンをクリックしてサーバー起動バッチファイルを実行
+                </div>
+                <button class="button" onclick="showBatchInstructions()">
+                    start-server.bat を実行する方法
+                </button>
+                
+                <div id="batch-instructions" style="display:none;">
+                    <div class="code">
+                        1. エクスプローラーで「愛哀物語」フォルダを開く<br>
+                        2. 「start-server.bat」をダブルクリック<br>
+                        3. コマンドプロンプトが開き、サーバーが起動します<br>
+                        4. ブラウザで http://localhost:8000/ を開く
+                    </div>
+                </div>
+
+                <div class="step">
+                    <strong>ステップ2:</strong> サーバー起動後、以下のリンクをクリック
+                </div>
+                <a href="http://localhost:8000/" class="button" target="_blank">
+                    ゲームを開く (http://localhost:8000/)
+                </a>
+            </div>
+        </div>
+
+        <div class="method">
+            <h2>方法2: Python で手動起動</h2>
+            <div class="steps">
+                <div class="step">
+                    <strong>ステップ1:</strong> コマンドプロンプトを開く（Win+R → cmd）
+                </div>
+                <div class="step">
+                    <strong>ステップ2:</strong> ゲームフォルダに移動
+                </div>
+                <div class="code">
+                    cd "C:\Users\info\Desktop\yoshiyuki\古事記project\VIBE CODING\soundnovel\愛哀物語"
+                </div>
+                <div class="step">
+                    <strong>ステップ3:</strong> Pythonサーバーを起動
+                </div>
+                <div class="code">
+                    python -m http.server 8000
+                </div>
+                <div class="step">
+                    <strong>ステップ4:</strong> ブラウザで開く
+                </div>
+                <a href="http://localhost:8000/" class="button" target="_blank">
+                    http://localhost:8000/
+                </a>
+            </div>
+        </div>
+
+        <div class="method">
+            <h2>方法3: Node.js を使用（要インストール）</h2>
+            <div class="steps">
+                <div class="step">
+                    <strong>ステップ1:</strong> http-server をインストール
+                </div>
+                <div class="code">
+                    npm install -g http-server
+                </div>
+                <div class="step">
+                    <strong>ステップ2:</strong> ゲームフォルダで実行
+                </div>
+                <div class="code">
+                    http-server -p 8000
+                </div>
+            </div>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ 注意事項:</strong>
+            <ul>
+                <li>サーバーを停止するには、コマンドプロンプトで Ctrl+C を押してください</li>
+                <li>ポート8000が使用中の場合は、別のポート番号（例：8080）を使用してください</li>
+                <li>Chrome のセキュリティを無効化する方法は開発時のみ使用してください</li>
+            </ul>
+        </div>
+
+        <div class="method">
+            <h2>トラブルシューティング</h2>
+            <div class="steps">
+                <div class="step">
+                    <strong>Q: Pythonがインストールされていません</strong><br>
+                    A: <a href="https://www.python.org/downloads/" target="_blank">Python公式サイト</a>からダウンロードしてインストールしてください
+                </div>
+                <div class="step">
+                    <strong>Q: ポート8000が使用中です</strong><br>
+                    A: 別のポート番号を使用してください：
+                    <div class="code">python -m http.server 8080</div>
+                    そして http://localhost:8080/ でアクセス
+                </div>
+                <div class="step">
+                    <strong>Q: ゲームが起動しても選択肢が機能しません</strong><br>
+                    A: ブラウザのキャッシュをクリアして再読み込みしてください（Ctrl+F5）
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showBatchInstructions() {
+            const elem = document.getElementById('batch-instructions');
+            elem.style.display = elem.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // サーバーが起動しているかチェック
+        fetch('http://localhost:8000/')
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('status').className = 'status success';
+                    document.getElementById('status').innerHTML = '✅ サーバーが起動しています！下のリンクからゲームを開いてください。';
+                }
+            })
+            .catch(error => {
+                // サーバーが起動していない
+            });
+    </script>
+</body>
+</html>

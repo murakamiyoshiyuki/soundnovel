@@ -1,0 +1,93 @@
+{
+  "chapter": 0,
+  "title": "序章：運命の逃走",
+  "scenes": [
+    {
+      "id": "scene0-1",
+      "background": "darkness",
+      "bgm": "tension",
+      "lines": [
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "footsteps_running" }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "はあ、はあ、はあ………。",
+          "character": null
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "monster_growl" }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "どうして…。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "待って…。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "どうして、こんなことになったんだ。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "どこにいくの…。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "こんなつもりじゃなかったのに。\nこんなはずじゃなかったのに。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "何がいけなかったんだろう。\nなんでこうなっちゃったんだろう。",
+          "character": null
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "なんで…？なんで…？！",
+          "character": null
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "silence" }
+        },
+        {
+          "type": "wait",
+          "duration": 2000
+        },
+        {
+          "type": "narration",
+          "text": "これは、一組の兄妹の物語。"
+        },
+        {
+          "type": "narration",
+          "text": "愛と哀しみ、そして選択の物語――"
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "fadeout", "duration": 2000 }
+        },
+        {
+          "type": "wait",
+          "duration": 2000
+        }
+      ]
+    }
+  ]
+}

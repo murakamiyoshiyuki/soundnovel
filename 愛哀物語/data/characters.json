@@ -1,0 +1,104 @@
+{
+  "characters": [
+    {
+      "id": "izanagi",
+      "name": "イザナギ",
+      "fullName": "伊邪那岐命",
+      "description": "本作の主人公。高天原の末っ子の男神。",
+      "expressions": [
+        "normal",
+        "smile",
+        "happy",
+        "sad",
+        "angry",
+        "surprised",
+        "embarrassed",
+        "bored",
+        "serious",
+        "despair",
+        "determination"
+      ],
+      "color": "#4169E1"
+    },
+    {
+      "id": "izanami",
+      "name": "イザナミ",
+      "fullName": "伊邪那美命",
+      "description": "イザナギの双子の妹。天真爛漫で高天原のアイドル的存在。",
+      "expressions": [
+        "normal",
+        "smile",
+        "happy",
+        "sad",
+        "angry",
+        "surprised",
+        "embarrassed",
+        "question",
+        "pout",
+        "pleading",
+        "sick",
+        "yomi"
+      ],
+      "color": "#FF69B4"
+    },
+    {
+      "id": "minakanushi",
+      "name": "ミナカヌシ",
+      "fullName": "天御中主神",
+      "description": "最初に生まれた神様。高天原のリーダー的存在。",
+      "expressions": [
+        "normal",
+        "smile",
+        "serious"
+      ],
+      "color": "#FFD700"
+    },
+    {
+      "id": "takamimusubi",
+      "name": "タカミムスビ",
+      "fullName": "高御産巣日神",
+      "description": "造化三神の一柱。真面目な性格。",
+      "expressions": [
+        "normal",
+        "serious"
+      ],
+      "color": "#8B4513"
+    },
+    {
+      "id": "kamumusubi",
+      "name": "カムムスビ",
+      "fullName": "神産巣日神",
+      "description": "造化三神の一柱。明るい性格。",
+      "expressions": [
+        "normal",
+        "smile"
+      ],
+      "color": "#FF8C00"
+    },
+    {
+      "id": "kukurihime",
+      "name": "ククリヒメ",
+      "fullName": "菊理媛神",
+      "description": "仲裁の神。シークレットエンドに登場。",
+      "expressions": [
+        "normal",
+        "compassionate"
+      ],
+      "color": "#9370DB"
+    }
+  ],
+  "namePlates": {
+    "narrator": {
+      "name": "",
+      "color": "#FFFFFF"
+    },
+    "system": {
+      "name": "システム",
+      "color": "#00FF00"
+    },
+    "unknown": {
+      "name": "？？？",
+      "color": "#808080"
+    }
+  }
+}

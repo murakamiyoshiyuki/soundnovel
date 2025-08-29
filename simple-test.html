@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>簡易テスト</title>
+</head>
+<body>
+    <h1>選択肢テスト</h1>
+    <div id="output"></div>
+    
+    <script>
+        async function test() {
+            const output = document.getElementById('output');
+            
+            // chapter1.jsonを読み込む
+            const response = await fetch('data/scenario/chapter1.json');
+            const data = await response.json();
+            
+            // scene1-4を探す
+            const scene14 = data.scenes.find(s => s.id === 'scene1-4');
+            if (!scene14) {
+                output.innerHTML = 'scene1-4が見つかりません';
+                return;
+            }
+            
+            // 選択肢を探す
+            const choiceLine = scene14.lines.find(l => l.type === 'choice');
+            if (!choiceLine) {
+                output.innerHTML = 'scene1-4に選択肢がありません';
+                return;
+            }
+            
+            let html = '<h2>選択肢: ' + choiceLine.text + '</h2>';
+            html += '<p>選択肢数: ' + choiceLine.options.length + '</p>';
+            html += '<ol>';
+            
+            choiceLine.options.forEach(opt => {
+                html += '<li>';
+                html += '<strong>' + opt.text + '</strong><br>';
+                html += 'next: ' + (opt.next || '未設定') + '<br>';
+                if (opt.effects) {
+                    html += '効果: ';
+                    if (opt.effects.affection !== undefined) {
+                        html += '愛情度' + (opt.effects.affection >= 0 ? '+' : '') + opt.effects.affection + ' ';
+                    }
+                    if (opt.effects.flag) {
+                        html += 'フラグ: ' + opt.effects.flag;
+                    }
+                }
+                html += '</li>';
+            });
+            html += '</ol>';
+            
+            // 分岐先シーンの確認
+            html += '<h3>分岐先シーンの存在確認:</h3>';
+            html += '<ul>';
+            
+            const checkScenes = ['scene1-5a', 'scene1-5b', 'scene1-5c'];
+            checkScenes.forEach(sceneId => {
+                const scene = data.scenes.find(s => s.id === sceneId);
+                if (scene) {
+                    html += '<li style="color: green">✓ ' + sceneId + ' exists</li>';
+                } else {
+                    html += '<li style="color: red">✗ ' + sceneId + ' not found</li>';
+                }
+            });
+            html += '</ul>';
+            
+            output.innerHTML = html;
+        }
+        
+        test();
+    </script>
+</body>
+</html>

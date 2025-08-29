@@ -1,0 +1,87 @@
+{
+  "game": {
+    "title": "愛哀物語",
+    "subtitle": "古事記サウンドノベル",
+    "version": "1.0.0",
+    "author": "VIBE CODING",
+    "copyright": "2025"
+  },
+  "settings": {
+    "defaultTextSpeed": 50,
+    "defaultAutoSpeed": 50,
+    "defaultBGMVolume": 0.7,
+    "defaultSEVolume": 0.7,
+    "defaultVoiceVolume": 0.8,
+    "skipOnlyRead": true,
+    "autoSaveInterval": 300000
+  },
+  "chapters": [
+    {
+      "id": "prologue",
+      "title": "序章：運命の逃走",
+      "file": "prologue.json"
+    },
+    {
+      "id": "chapter1",
+      "title": "第1章：高天原での出会い",
+      "file": "chapter1.json"
+    },
+    {
+      "id": "chapter2",
+      "title": "第2章：国生みの使命",
+      "file": "chapter2.json"
+    },
+    {
+      "id": "chapter3",
+      "title": "第3章：結婚と島産み",
+      "file": "chapter3.json"
+    },
+    {
+      "id": "chapter4",
+      "title": "第4章：幸せな日々と転機",
+      "file": "chapter4.json"
+    },
+    {
+      "id": "chapter5",
+      "title": "第5章：黄泉の国",
+      "file": "chapter5.json"
+    },
+    {
+      "id": "endings",
+      "title": "終章：それぞれの結末",
+      "file": "endings.json"
+    }
+  ],
+  "endings": [
+    {
+      "id": "true_end",
+      "title": "TRUE END：愛と哀しみの誓い",
+      "condition": "affection >= 70 && flags.waited_at_yomi"
+    },
+    {
+      "id": "normal_end",
+      "title": "NORMAL END：永遠の別離",
+      "condition": "default"
+    },
+    {
+      "id": "false_happy_end",
+      "title": "FALSE HAPPY END：偽りの幸福",
+      "condition": "flags.avoided_fire_god"
+    },
+    {
+      "id": "bad_end1",
+      "title": "BAD END 1：黄泉の住人",
+      "condition": "affection < 30 || flags.opened_door_immediately"
+    },
+    {
+      "id": "bad_end2",
+      "title": "BAD END 2：神の終焉",
+      "condition": "flags.self_sacrifice"
+    },
+    {
+      "id": "secret_end",
+      "title": "SECRET END：菊理媛の仲裁",
+      "condition": "affection >= 80 && flags.called_kukurihime"
+    }
+  ]
+}

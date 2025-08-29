@@ -1,0 +1,597 @@
+{
+  "chapter": 4,
+  "title": "第4章：幸せな日々と転機",
+  "scenes": [
+    {
+      "id": "scene4-1",
+      "background": "onogoro_island",
+      "bgm": "peaceful",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "多くの神々を生み、国は繁栄していった。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "ねえ、お兄ちゃん？",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "何？",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "この子が生まれたら、報告を兼ねて、ちょっとだけ高天原に帰ってみない？",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "そっか、もうずいぶん帰ってないもんな。",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "うん。きっと中つ国が繁栄してるってこと、",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "ミナカヌシ様たちも気付いて喜んでくれてるはずだと思うの。",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "そうだな。この子が生まれたら、な。",
+          "character": {
+            "name": "izanagi",
+            "expression": "smile",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "ね。",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "あ…。",
+          "character": {
+            "name": "izanami",
+            "expression": "surprised",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "う、生まれる…！",
+          "character": {
+            "name": "izanami",
+            "expression": "normal",
+            "position": "right"
+          }
+        },
+        {
+          "type": "choice",
+          "text": "【最重要選択】火の神誕生への対処",
+          "options": [
+            {
+              "text": "待って！なんか嫌な予感がする",
+              "next": "scene4-2a",
+              "effects": {
+                "flag": "avoided_fire_god",
+                "affection": 5
+              }
+            },
+            {
+              "text": "頑張れ、イザナミ",
+              "next": "scene4-2b",
+              "effects": {
+                "affection": 10
+              }
+            },
+            {
+              "text": "一旦休もう",
+              "next": "scene4-2c",
+              "effects": {
+                "affection": 15,
+                "flag": "tried_to_rest"
+              }
+            },
+            {
+              "text": "僕が代わりに産めたらいいのに",
+              "next": "scene4-2d",
+              "effects": {
+                "affection": 20,
+                "flag": "wished_to_help"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene4-2a",
+      "background": "onogoro_island",
+      "bgm": "tension",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "待って！イザナミ、今回はやめよう。",
+          "character": {
+            "name": "izanagi",
+            "expression": "serious",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "え？どうして？",
+          "character": {
+            "name": "izanami",
+            "expression": "question",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "分からない。でも、すごく嫌な予感がするんだ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "serious",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "でも…もう…",
+          "character": {
+            "name": "izanami",
+            "expression": "sad",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "お願いだ。今回だけは、僕の言うことを聞いて。",
+          "character": {
+            "name": "izanagi",
+            "expression": "serious",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "…分かった。お兄ちゃんがそこまで言うなら。",
+          "character": {
+            "name": "izanami",
+            "expression": "sad",
+            "position": "right"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "flash", "color": "#ffd700", "duration": 500 }
+        },
+        {
+          "type": "narration",
+          "text": "【偽ハッピーエンドルートに入りました】"
+        },
+        {
+          "type": "narration",
+          "text": "火の神カグツチは生まれなかった。"
+        },
+        {
+          "type": "narration",
+          "text": "そのため、世界に火は存在しない…"
+        },
+        {
+          "type": "scene_change",
+          "next": "endings"
+        }
+      ]
+    },
+    {
+      "id": "scene4-2b",
+      "background": "onogoro_island",
+      "bgm": "sad",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "頑張れ、イザナミ。",
+          "character": {
+            "name": "izanagi",
+            "expression": "normal",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "うん…！",
+          "character": {
+            "name": "izanami",
+            "expression": "normal",
+            "position": "right"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "birth" }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "red_filter", "opacity": 0.3 }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "あっ…熱い…！",
+          "character": {
+            "name": "izanami",
+            "expression": "sad",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ！？",
+          "character": {
+            "name": "izanagi",
+            "expression": "surprised",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "火の…神…カグツチ…",
+          "character": {
+            "name": "izanami",
+            "expression": "sick",
+            "position": "right"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "shake", "intensity": 10, "duration": 500 }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ！しっかりして！",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "left"
+          }
+        },
+        {
+          "type": "scene_change",
+          "next": "scene4-3"
+        }
+      ]
+    },
+    {
+      "id": "scene4-2c",
+      "background": "onogoro_island",
+      "bgm": "tension",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "一旦休もう。無理しないで。",
+          "character": {
+            "name": "izanagi",
+            "expression": "serious",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "でも…もう止められない…",
+          "character": {
+            "name": "izanami",
+            "expression": "sad",
+            "position": "right"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "birth" }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "red_filter", "opacity": 0.3 }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "あああっ！",
+          "character": {
+            "name": "izanami",
+            "expression": "sick",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ！",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "left"
+          }
+        },
+        {
+          "type": "scene_change",
+          "next": "scene4-3"
+        }
+      ]
+    },
+    {
+      "id": "scene4-2d",
+      "background": "onogoro_island",
+      "bgm": "sad",
+      "lines": [
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "僕が代わりに産めたらいいのに…",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "優しいね、お兄ちゃんは…",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "でも、これは私の役目だから…",
+          "character": {
+            "name": "izanami",
+            "expression": "sad",
+            "position": "right"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "sound", "sound": "birth" }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "red_filter", "opacity": 0.5 }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "！！！",
+          "character": {
+            "name": "izanami",
+            "expression": "sick",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ！！",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "left"
+          }
+        },
+        {
+          "type": "scene_change",
+          "next": "scene4-3"
+        }
+      ]
+    },
+    {
+      "id": "scene4-3",
+      "background": "onogoro_island",
+      "bgm": "sad",
+      "lines": [
+        {
+          "type": "narration",
+          "text": "火の神カグツチが生まれた。"
+        },
+        {
+          "type": "narration",
+          "text": "しかし、その炎によってイザナミは…"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "お兄ちゃん…",
+          "character": {
+            "name": "izanami",
+            "expression": "sick",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ、大丈夫だ！僕がなんとかする！",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "ダメ…もう…",
+          "character": {
+            "name": "izanami",
+            "expression": "sick",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "でも…お兄ちゃんと一緒にいられて…幸せだった…",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "そんなこと言うな！まだ終わってない！",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "left"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナミ",
+          "text": "ありがとう…愛してる…",
+          "character": {
+            "name": "izanami",
+            "expression": "smile",
+            "position": "right"
+          }
+        },
+        {
+          "type": "effect",
+          "effect": { "type": "fadeout", "duration": 2000 }
+        },
+        {
+          "type": "narration",
+          "text": "イザナミは息を引き取った。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ…イザナミ！！",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "うわあああああ！！",
+          "character": {
+            "name": "izanagi",
+            "expression": "despair",
+            "position": "center"
+          }
+        },
+        {
+          "type": "narration",
+          "text": "怒りと悲しみに狂ったイザナギは、カグツチを斬り殺した。"
+        },
+        {
+          "type": "narration",
+          "text": "しかし、イザナミは戻らない…"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "イザナミ…会いたい…もう一度…",
+          "character": {
+            "name": "izanagi",
+            "expression": "sad",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "そうだ…黄泉の国…",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "center"
+          }
+        },
+        {
+          "type": "dialogue",
+          "speaker": "イザナギ",
+          "text": "死者の国に行けば、イザナミに会える！",
+          "character": {
+            "name": "izanagi",
+            "expression": "determination",
+            "position": "center"
+          }
+        },
+        {
+          "type": "scene_change",
+          "next": "chapter5"
+        }
+      ]
+    }
+  ]
+}

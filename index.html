@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>愛哀物語 - 古事記サウンドノベル</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- ヘッダーメニュー -->
+        <div id="header-menu">
+            <button id="menu-btn" class="header-btn">メニュー</button>
+            <button id="save-btn" class="header-btn">セーブ</button>
+            <button id="load-btn" class="header-btn">ロード</button>
+            <button id="config-btn" class="header-btn">設定</button>
+            <button id="skip-btn" class="header-btn">スキップ</button>
+            <button id="auto-btn" class="header-btn">オート</button>
+        </div>
+
+        <!-- メイン画面 -->
+        <div id="main-screen">
+            <!-- 背景レイヤー -->
+            <div id="background-layer"></div>
+            
+            <!-- エフェクトレイヤー -->
+            <div id="effect-layer"></div>
+            
+            <!-- キャラクターレイヤー -->
+            <div id="character-layer">
+                <div id="character-left" class="character-position"></div>
+                <div id="character-center" class="character-position"></div>
+                <div id="character-right" class="character-position"></div>
+            </div>
+
+            <!-- テキストウィンドウ -->
+            <div id="text-window">
+                <div id="speaker-name"></div>
+                <div id="text-content"></div>
+                <div id="next-indicator">▼</div>
+            </div>
+
+            <!-- 選択肢ウィンドウ -->
+            <div id="choice-window" style="display: none;">
+                <div id="choice-container"></div>
+            </div>
+        </div>
+
+        <!-- タイトル画面 -->
+        <div id="title-screen">
+            <h1 class="title">愛哀物語</h1>
+            <p class="subtitle">- 古事記サウンドノベル -</p>
+            <div class="title-menu">
+                <button id="start-btn" class="title-btn">はじめから</button>
+                <button id="continue-btn" class="title-btn">つづきから</button>
+                <button id="gallery-btn" class="title-btn">ギャラリー</button>
+                <button id="config-title-btn" class="title-btn">設定</button>
+            </div>
+        </div>
+
+        <!-- セーブ/ロード画面 -->
+        <div id="save-load-screen" style="display: none;">
+            <div class="save-load-header">
+                <h2 id="save-load-title">セーブ</h2>
+                <button id="save-load-close" class="close-btn">×</button>
+            </div>
+            <div id="save-load-slots"></div>
+        </div>
+
+        <!-- 設定画面 -->
+        <div id="config-screen" style="display: none;">
+            <div class="config-header">
+                <h2>設定</h2>
+                <button id="config-close" class="close-btn">×</button>
+            </div>
+            <div class="config-content">
+                <div class="config-item">
+                    <label>文字速度</label>
+                    <input type="range" id="text-speed" min="1" max="100" value="50">
+                </div>
+                <div class="config-item">
+                    <label>オート速度</label>
+                    <input type="range" id="auto-speed" min="1" max="100" value="50">
+                </div>
+                <div class="config-item">
+                    <label>BGM音量</label>
+                    <input type="range" id="bgm-volume" min="0" max="100" value="70">
+                </div>
+                <div class="config-item">
+                    <label>SE音量</label>
+                    <input type="range" id="se-volume" min="0" max="100" value="70">
+                </div>
+                <div class="config-item">
+                    <label>既読スキップ</label>
+                    <input type="checkbox" id="skip-read">
+                </div>
+            </div>
+        </div>
+
+        <!-- バックログ -->
+        <div id="backlog" style="display: none;">
+            <div class="backlog-header">
+                <h2>バックログ</h2>
+                <button id="backlog-close" class="close-btn">×</button>
+            </div>
+            <div id="backlog-content"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript読み込み -->
+    <script src="js/game-engine.js"></script>
+    <script src="js/scenario-loader.js"></script>
+    <script src="js/save-system.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/audio-manager.js"></script>
+    <script>
+        // ゲーム初期化
+        window.addEventListener('DOMContentLoaded', () => {
+            const game = new GameEngine();
+            game.init();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    user-select: none;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ヘッダーメニュー */
+#header-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#header-menu:hover {
+    opacity: 1;
+}
+
+.header-btn {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.header-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* メイン画面 */
+#main-screen {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: none;
+}
+
+/* 背景レイヤー */
+#background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
+    transition: opacity 1s;
+}
+
+/* エフェクトレイヤー */
+#effect-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* キャラクターレイヤー */
+#character-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 250px;
+    z-index: 30;
+}
+
+.character-position {
+    width: 300px;
+    height: 600px;
+    margin: 0 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    transition: all 0.5s;
+}
+
+/* テキストウィンドウ */
+#text-window {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 40;
+}
+
+#speaker-name {
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #444;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+#speaker-name:empty {
+    display: none;
+}
+
+#text-content {
+    min-height: 120px;
+    font-size: 20px;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
+#next-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 16px;
+    color: #fff;
+    animation: blink 1s infinite;
+}
+
+/* 選択肢ウィンドウ */
+#choice-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 30px;
+    z-index: 60;
+    min-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#choice-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.choice-prompt {
+    color: #ffd700;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.choice-btn {
+    background: linear-gradient(to bottom, #444, #222);
+    border: 1px solid #666;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 5px;
+    text-align: left;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.choice-btn:hover {
+    background: linear-gradient(to bottom, #666, #333);
+    transform: translateX(5px);
+}
+
+/* タイトル画面 */
+#title-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #1a1a2e, #0f0f1e);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.title {
+    font-size: 72px;
+    font-weight: bold;
+    background: linear-gradient(to right, #ffd700, #ffed4e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+.subtitle {
+    font-size: 24px;
+    color: #aaa;
+    margin-bottom: 50px;
+}
+
+.title-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title-btn {
+    background: transparent;
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    padding: 15px 50px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 250px;
+}
+
+.title-btn:hover {
+    background: rgba(255, 215, 0, 0.1);
+    transform: scale(1.05);
+}
+
+/* セーブ/ロード画面 */
+#save-load-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    height: 70%;
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid #444;
+    border-radius: 10px;
+    z-index: 150;
+    overflow-y: auto;
+}
+
+.save-load-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #444;
+}
+
+#save-load-slots {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 15px;
+}
+
+.save-slot {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.save-slot:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffd700;
+}
+
+.save-slot-number {
+    font-size: 14px;
+    color: #888;
+}
+
+.save-slot-date {
+    font-size: 16px;
+    color: #fff;
+    margin: 5px 0;
+}
+
+.save-slot-text {
+    font-size: 14px;
+    color: #aaa;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.save-slot-empty {
+    text-align: center;
+    color: #666;
+    padding: 30px;
+}
+
+/* 設定画面 */
+#config-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid #444;
+    border-radius: 10px;
+    z-index: 150;
+}
+
+.config-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #444;
+}
+
+.config-content {
+    padding: 20px;
+}
+
+.config-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.config-item label {
+    font-size: 16px;
+}
+
+.config-item input[type="range"] {
+    width: 200px;
+}
+
+.config-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* バックログ */
+#backlog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    height: 70%;
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid #444;
+    border-radius: 10px;
+    z-index: 150;
+}
+
+.backlog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #444;
+}
+
+#backlog-content {
+    padding: 20px;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+}
+
+.backlog-entry {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.backlog-speaker {
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 5px;
+}
+
+.backlog-text {
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* 共通 */
+.close-btn {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
